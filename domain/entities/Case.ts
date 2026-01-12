@@ -3,6 +3,8 @@ import { Road } from './Road';
 import { Evidence } from './Evidence';
 import { HumanFactor } from './HumanFactor';
 
+
+// Clase que representa un caso de accidente Completo.
 export class Case {
     constructor(
         public readonly id: string,

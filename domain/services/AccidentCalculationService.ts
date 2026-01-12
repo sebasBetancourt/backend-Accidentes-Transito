@@ -1,4 +1,5 @@
 import { Case } from '../entities/Case';
+
 import { KinematicsModule } from '../physics/KinematicsModule';
 import { HumanReactionModule } from '../physics/HumanReactionModule';
 import { ErrorMarginModule } from '../physics/ErrorMarginModule';
@@ -11,10 +12,11 @@ export interface CalculationResult {
     speedRangeKph: { min: number, max: number };
 }
 
+// Se define el servicio de AccidentCalculationService, que calcula el resultado de la simulacion.
 export class AccidentCalculationService {
     private kinematics: KinematicsModule;
     private humanReaction: HumanReactionModule;
-    private errorMargin: ErrorMarginModule;
+    private errorMargin: ErrorMarginModule; 
 
     constructor() {
         this.kinematics = new KinematicsModule();
@@ -22,6 +24,7 @@ export class AccidentCalculationService {
         this.errorMargin = new ErrorMarginModule();
     }
 
+    // Se define el calculo de la simulacion. con Cinetica y Kinematica
     public calculate(accidentCase: Case): CalculationResult {
         // 1. Calculate Speed from Skid Marks
         const speedMps = this.kinematics.calculateSpeedFromSkidMarks(

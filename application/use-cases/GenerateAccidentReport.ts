@@ -26,6 +26,7 @@ export interface GenerateReportInput {
 export class GenerateAccidentReport {
     constructor(private calculationService: AccidentCalculationService) { }
 
+    // Se define el uso de caso de uso GenerateAccidentReport, que calcula el resultado de la simulacion.
     public async execute(input: GenerateReportInput): Promise<CalculationResult> {
         // 1. Map Input to Domain Entities
         const vehicle = new Vehicle(
