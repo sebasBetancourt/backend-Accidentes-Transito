@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",             // versión de JS que generará
+    "module": "commonjs",           // para Node
+    "rootDir": ".",                 // carpeta raíz de tu código
+    "outDir": "dist",               // compilado a esta carpeta
+    "strict": true,                 // activa todas las comprobaciones estrictas
+    "esModuleInterop": true,        // permite importar CommonJS fácilmente
+    "skipLibCheck": true,           // ignora errores de librerías externas
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "@domain/*": ["domain/*"],
+      "@application/*": ["application/*"],
+      "@infrastructure/*": ["infrastructure/*"],
+      "@shared/*": ["shared/*"],
+      "@types/*": ["types/*"]
+    }
+  },
+  "include": ["index.ts", "application/**/*", "domain/**/*", "infrastructure/**/*", "shared/**/*", "types/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
